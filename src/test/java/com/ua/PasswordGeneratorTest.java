@@ -63,4 +63,12 @@ public class PasswordGeneratorTest {
 
         generator.cleanHistoryGenerated();
     }
+
+    @Test
+    public void getLastGenerated() {
+        PasswordGenerator generator = PasswordGenerator.getInstance();
+        char[] generatedPass = generator.generate();
+        char[] lastPass = generator.getLastGenerated();
+        assertEquals(generatedPass, lastPass);
+    }
 }
